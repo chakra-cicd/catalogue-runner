@@ -24,7 +24,7 @@ jobs:
      if: github.ref == 'refs/heads/main'
      uses: chara-cicd/usable-workflow/.github/workflows/nodejs.yaml@main
      with: 
-       project: {{ inputs.project }}
-       component: {{ inputs.component }}
-       environment: {{ inputs.environment }}
+       project: ${{ inputs.project }}
+       component: ${{ inputs.component }}
+       environment: ${{ inputs.environment }}
 
