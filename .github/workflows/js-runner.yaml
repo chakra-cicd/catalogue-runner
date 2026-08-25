@@ -25,3 +25,4 @@ jobs:
        project: ${{ inputs.project }}
        component: ${{ inputs.component }}
        environment: ${{ inputs.environment }}
+     secrets: inherit
