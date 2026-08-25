@@ -6,13 +6,11 @@ on:
     type: string
     required: true
     description: "enter project name"
-    default: false
 
    component:
     type: string
     required: true
     description: "enter component name"
-    default: false
 
    environment:
     type: environment
@@ -22,7 +20,7 @@ on:
 jobs:
   run-ci-pipeline:
      if: github.ref != 'refs/heads/main'
-     uses: chara-cicd/usable-workflow/.github/workflows/nodejs.yaml@main
+     uses: chakra-cicd/usable-workflow/.github/workflows/nodejs.yaml@main
      with: 
        project: ${{ inputs.project }}
        component: ${{ inputs.component }}
