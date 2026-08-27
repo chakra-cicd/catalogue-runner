@@ -16,6 +16,9 @@ on:
     type: environment
     required: true
     description: "select environment"
+permissions:
+  content: read
+  statuses: write
 
 jobs:
   run-ci-pipeline:
