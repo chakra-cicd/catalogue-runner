@@ -20,7 +20,7 @@ on:
 jobs:
   run-ci-pipeline:
      if: github.ref != 'refs/heads/main'
-     uses: chakra-cicd/usable-workflow/.github/workflows/nodejs.yaml@main
+     uses: chakra-cicd/usable-workflow/.github/workflows/feature-nodejs.yaml@main
      with: 
        project: ${{ inputs.project }}
        component: ${{ inputs.component }}
