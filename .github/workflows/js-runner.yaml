@@ -23,4 +23,5 @@ jobs:
      uses: chakra-cicd/usable-workflow/.github/workflows/feature-nodejs.yaml@main
        component: ${{ inputs.component }}
        environment: ${{ inputs.environment }}
+       project: ${{ inputs.project }}
      secrets: inherit
