@@ -16,14 +16,15 @@ on:
     type: environment
     required: true
     description: "select environment"
-permissions:
-  contents: read
-  statuses: write
+
 
 jobs:
   run-ci-pipeline:
      if: github.ref != 'refs/heads/main'
      uses: chakra-cicd/usable-workflow/.github/workflows/feature-nodejs.yaml@main
+     permissions:
+      contents: read
+      statuses: write
      with: 
        project: ${{ inputs.project }}
        component: ${{ inputs.component }}
