@@ -1,10 +1,25 @@
 name: catalogue
-on: [push]
-permissions:
-  contents: read
-  statuses: write
-  security-events: read
+on:
+ workflow_dispatch:
+  inputs:
+   project:
+    type: string
+    required: true
+    description: "enter project name"
 
+   component:
+    type: string
+    required: true
+    description: "enter component name"
+
+   environment:
+    type: environment
+    required: true
+    description: "select environment"
+permissions:
+      contents: read
+      statuses: write
+      security-events: read
 
 jobs:
   run-ci-pipeline:
@@ -15,7 +30,7 @@ jobs:
        security-events: read
      uses: chakra-cicd/usable-workflow/.github/workflows/feature-nodejs.yaml@main
      with: 
-       project: roboshop
-       component: catalogue
-       environment: dev
+       project: ${{ inputs.project }}
+       component: ${{ inputs.component }}
+       environment: ${{ inputs.environment }}
      secrets: inherit
