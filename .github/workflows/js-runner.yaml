@@ -20,9 +20,7 @@ on:
 jobs:
   run-ci-pipeline:
      if: github.ref != 'refs/heads/main'
-     uses: chakra-cicd/usable-workflow/.github/workflows/nodejs.yaml@main
-     with: 
-       project: ${{ inputs.project }}
+     uses: chakra-cicd/usable-workflow/.github/workflows/feature-nodejs-pipeline@main
        component: ${{ inputs.component }}
        environment: ${{ inputs.environment }}
      secrets: inherit
