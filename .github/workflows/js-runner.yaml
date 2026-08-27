@@ -17,7 +17,7 @@ on:
     required: true
     description: "select environment"
 permissions:
-  content: read
+  contents: read
   statuses: write
 
 jobs:
